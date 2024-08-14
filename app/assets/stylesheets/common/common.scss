@@ -1,0 +1,23 @@
+#fishDetroit {
+	h1 {
+		font-size: 48px;
+	}
+
+	.or-divider {
+		text-align: center;
+		width: 500px;
+		margin: 15px 0;
+	}
+
+	form {
+		display: flex;
+		flex-flow: column;
+		width: 500px;
+
+		input {
+			&:not(:last-of-type) {
+				margin: 0 0 20px 0;
+			}
+		}
+	}
+}

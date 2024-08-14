@@ -1,0 +1,7 @@
+<div class="page user-profile--page">
+	<h1>Welcome to the page of <%= @user.name %></h1>
+
+	<% if current_user == @user %>
+	<h3>This is my page!</h3>
+	<% end %>
+</div>
