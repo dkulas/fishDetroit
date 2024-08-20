@@ -84,6 +84,9 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    dartsass-rails (0.5.1)
+      railties (>= 6.0.0)
+      sass-embedded (~> 1.63)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
@@ -92,6 +95,7 @@ GEM
     ffi (1.16.3)
     globalid (1.1.0)
       activesupport (>= 5.0)
+    google-protobuf (3.25.4)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
@@ -170,6 +174,9 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.5)
     rubyzip (2.3.2)
+    sass-embedded (1.69.5)
+      google-protobuf (~> 3.23)
+      rake (>= 13.0.0)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -226,6 +233,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   capybara
+  dartsass-rails (~> 0.5.1)
   debug
   importmap-rails
   jbuilder
