@@ -1,3 +1,7 @@
+<nav>
+  <%= link_to 'Back to Homepage', root_path %>
+</nav>
+
 <div class="page new-user--page">
   <%= form_for @user do |f| %>
     <%= f.label :name %>
@@ -11,7 +15,3 @@
     <%= f.submit "Create Account" %>
   <% end %>
 </div>
-
-<nav>
-  <%= link_to 'Back to Homepage', root_path %>
-</nav>
