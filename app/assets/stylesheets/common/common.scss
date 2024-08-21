@@ -1,6 +1,6 @@
+// common styles
 #fishDetroit {
 	h1 {
-		font-size: 48px;
 		font-family: sans-serif;
    		font-weight: 600;  
 	}
@@ -20,6 +20,20 @@
 			&:not(:last-of-type) {
 				margin: 0 0 20px 0;
 			}
+		}
+	}
+}
+
+// mobile styles
+@media screen and (max-width: 767px) {
+	// 
+}
+
+// desktop styles
+@media screen and (min-width: 768px) {
+	#fishDetroit {
+		h1 {
+			font-size: 48px;
 		}
 	}
 }
