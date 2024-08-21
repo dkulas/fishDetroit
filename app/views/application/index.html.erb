@@ -1,5 +1,9 @@
 <% if logged_in? %>
-  <%= button_to "Logout", sessions_path, method: :delete %>
+  <nav>
+    <%= button_to "Logout", sessions_path, method: :delete %>
+  </nav>
 <% else %>
-  <%= link_to "Login Page", login_path, method: :get %>
+  <nav>
+    <%= link_to "Login Page", login_path, method: :get %>
+  </nav>
 <% end %>
