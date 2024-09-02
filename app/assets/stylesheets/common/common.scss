@@ -1,14 +1,17 @@
+@use "config/variables" as v;
+
 // common styles
 #fishDetroit {
 	h1 {
-		font-family: sans-serif;
-   		font-weight: 600;  
+		font-family: v.$font-family-sans; 
+   	font-weight: 600;
+    color: green;
 	}
 
 	.or-divider {
 		text-align: center;
 		width: 500px;
-		margin: 15px 0;
+		margin: 15px 0; 
 	}
 
 	form {
@@ -18,7 +21,7 @@
 
 		input {
 			&:not(:last-of-type) {
-				margin: 0 0 20px 0;
+				margin: 0 0 20px 0; 
 			}
 		}
 	}
@@ -33,7 +36,7 @@
 @media screen and (min-width: 768px) {
 	#fishDetroit {
 		h1 {
-			font-size: 48px;
+			font-size: 48px; 
 		}
 	}
 }
