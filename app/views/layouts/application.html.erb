@@ -6,8 +6,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <%= stylesheet_link_tag "application" %>
+    <!-- Ensure Turbo is not included in the JavaScript imports -->
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
   </head>
 
   <body id="fishDetroit">

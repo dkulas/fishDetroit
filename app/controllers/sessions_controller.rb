@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
-  def index
-  end
-
   def new
+    # Render login form
   end
 
   def create
@@ -11,12 +9,13 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id 
       redirect_to @user
     else
-      redirect_to login_path
+      flash[:alert] = "Invalid email or password"
+      render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_path
+    redirect_to login_path, notice: "Logged out!"
   end
 end
