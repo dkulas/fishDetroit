@@ -1,9 +1,12 @@
 <% if logged_in? %>
   <nav>
+    <%= link_to "Home", root_path, class: "home-link" %>
+    <%= link_to "Profile", user_path(current_user), class: "profile-link" %>
     <%= button_to "Logout", logout_path, method: :delete %>
   </nav>
 <% else %>
   <nav>
+    <%= link_to "Home", root_path, class: "home-link" %>
     <%= link_to "Login Page", login_path, method: :get %>
   </nav>
 <% end %>
