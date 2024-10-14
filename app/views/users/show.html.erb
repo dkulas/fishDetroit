@@ -1,7 +1,41 @@
+<%= render "application/header" %>
+
 <div class="page user-profile--page">
-	<h1>Welcome to the page of <%= @user.name %></h1>
+	<h1><%= @user.name %>'s Profile</h1>
 
 	<% if current_user == @user %>
 	<h3>This is my page!</h3>
 	<% end %>
 </div>
+
+<h2>Create a New Post</h2>
+
+<%= form_with(model: [@user, @post], local: true) do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :body %><br>
+    <%= form.text_area :body, rows: 5 %>
+  </div>
+  <div>
+    <%= form.submit "Create Post" %>
+  </div>
+<% end %>
+
+<% if @posts.any? %>
+  <h2>Your Posts</h2>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <strong><%= post.title %></strong><br>
+        <%= post.body %><br>
+        <em>Posted on <%= post.created_at.strftime("%B %d, %Y") %></em>
+      </li>
+      <hr>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You haven't created any posts yet.</p>
+<% end %>

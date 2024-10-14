@@ -31,11 +31,16 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @user = User.find(params[:user_id])  # Find the user first
+    @post = @user.posts.build(post_params)  # Build the post associated with the user
+    
     if @post.save
-      redirect_to @post
+      # Redirect back to the user's profile page after a successful post creation
+      redirect_to user_path(@user), notice: "Post created successfully."
     else
-      render 'new'
+      # If the post fails to save, render the user's show page with form and posts
+      @posts = @user.posts.order(created_at: :desc)
+      render 'users/show'
     end
   end
 

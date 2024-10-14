@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   root to: "application#index"
 
   # User routes
-  resources :users, only: [:new, :create, :show] # Ensures users have routes for new, create, and show
+  resources :users, only: [:new, :create, :show] do
+    resources :posts, only: [:create] # Nest posts under users to allow user-specific post creation
+  end
+
   get "/signup", to: "users#new", as: :signup   # Route for signup page
 
   # Session routes
@@ -11,10 +14,7 @@ Rails.application.routes.draw do
   post "/sessions", to: "sessions#create"
   delete "/logout", to: "sessions#destroy", as: :logout
 
-  # Routes for Posts and Comments
-  resources :posts do
-    resources :comments, only: [:index, :show] # Nested route to show comments on a post
-  end
-
+  # Routes for standalone Posts and Comments
+  resources :posts, only: [:index, :show, :edit, :update, :destroy] # Other post actions not tied to user
   resources :comments
 end
