@@ -32,6 +32,12 @@
         <strong><%= post.title %></strong><br>
         <%= post.body %><br>
         <em>Posted on <%= post.created_at.strftime("%B %d, %Y") %></em>
+
+        <!-- Edit button for the post -->
+        <%= link_to "Edit", edit_post_path(post), class: "btn btn-edit" %>
+
+        <!-- Delete button for the post -->
+        <%= button_to "Delete", post_path(post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-delete" %>
       </li>
       <hr>
     <% end %>

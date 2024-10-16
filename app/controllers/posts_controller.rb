@@ -1,27 +1,30 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
+
   def index
     @posts = Post.all
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = set_post
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = set_post
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = set_post
     if @post.update(post_params)
-      redirect_to @post
+      redirect_to user_path(@post.user)
     else
       render 'edit'
     end
   end
 
   def destroy
-    @post = Post.find(params[:id])
+    @post = set_post
     @post.destroy
     redirect_to root_path
   end
@@ -45,6 +48,16 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def authorize_user!
+    unless @post.user == current_user
+      redirect_to root_path, alert: "You are not authorized to perform this action."
+    end
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :body)
