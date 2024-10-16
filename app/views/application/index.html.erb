@@ -11,8 +11,10 @@
       <br>
       <small>Posted by <%= post.user.name %> on <%= post.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %> <% if post.updated_at > post.created_at %> (Updated on <%= post.updated_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y at %I:%M %p") %>)<% end %></small>
       <br>
+      <br>
 
       <%= post.body %>
+      <br>
       <br>
     </li>
   <% end %>
