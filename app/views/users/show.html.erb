@@ -28,16 +28,14 @@
   <ul>
     <% @posts.each do |post| %>
       <li>
-        <strong><%= post.title %></strong><br>
-        <%= post.body %><br>
-        <em>Posted on <%= post.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %></em>
+        <strong><%= post.title %></strong>
+        <br>
+        <small>Posted by <%= post.user.name %> on <%= post.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %> <% if post.updated_at > post.created_at %> (Updated on <%= post.updated_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y at %I:%M %p") %>)<% end %></small>
+        <br>
 
-				<% if post.updated_at > post.created_at %>
-					<br>
-				  <em>Updated on <%= post.updated_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y at %I:%M %p") %></em>
-				<% end %>
+        <%= post.body %>
+        <br>
 
-				<br>
         <!-- Edit button for the post -->
         <%= link_to "Edit", edit_post_path(post), class: "btn btn-edit" %>
 
