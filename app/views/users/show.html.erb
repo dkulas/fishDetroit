@@ -31,7 +31,11 @@
       <li>
         <strong><%= post.title %></strong><br>
         <%= post.body %><br>
-        <em>Posted on <%= post.created_at.strftime("%B %d, %Y") %></em>
+        <em>Posted on <%= post.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %></em>
+
+				<% if post.updated_at > post.created_at %>
+				  <em>Updated on <%= post.updated_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y at %I:%M %p") %></em>
+				<% end %>
 
         <!-- Edit button for the post -->
         <%= link_to "Edit", edit_post_path(post), class: "btn btn-edit" %>
