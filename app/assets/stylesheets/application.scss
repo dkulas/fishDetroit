@@ -1,6 +1,11 @@
+@use 'reset';
 @use 'variables' as v;
 
 body {
-	line-height: initial;
 	background: v.$background-color;
+}
+
+p {
+	color: v.$primary-color;
+	line-height: v.$line-height-base;
 }
