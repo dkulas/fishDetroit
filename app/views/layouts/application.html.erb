@@ -6,7 +6,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application" %>
     <!-- Ensure Turbo is not included in the JavaScript imports -->
     <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
   </head>
@@ -15,7 +14,10 @@
     <header>
       <h1>FishDetroit</h1>
     </header>
+    <%= render "application/header" %>
 
     <%= yield %>
+
+    <%= render "application/footer" %>
   </body>
 </html>

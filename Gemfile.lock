@@ -84,18 +84,13 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
-    dartsass-rails (0.5.1)
-      railties (>= 6.0.0)
-      sass-embedded (~> 1.63)
     date (3.3.3)
     debug (1.7.2)
       irb (>= 1.5.0)
       reline (>= 0.3.1)
     erubi (1.12.0)
-    ffi (1.16.3)
     globalid (1.1.0)
       activesupport (>= 5.0)
-    google-protobuf (3.25.4)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.6)
@@ -175,17 +170,6 @@ GEM
       io-console (~> 0.5)
     rexml (3.2.5)
     rubyzip (2.3.2)
-    sass-embedded (1.69.5)
-      google-protobuf (~> 3.23)
-      rake (>= 13.0.0)
-    sassc (2.4.0)
-      ffi (~> 1.9)
-    sassc-rails (2.1.2)
-      railties (>= 4.0.0)
-      sassc (>= 2.0)
-      sprockets (> 3.0)
-      sprockets-rails
-      tilt
     selenium-webdriver (4.9.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -201,8 +185,11 @@ GEM
       mini_portile2 (~> 2.8.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    tailwindcss-rails (3.0.0)
+      railties (>= 7.0.0)
+      tailwindcss-ruby
+    tailwindcss-ruby (3.4.14)
     thor (1.2.1)
-    tilt (2.3.0)
     timeout (0.3.2)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
@@ -230,18 +217,17 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap
   capybara
-  dartsass-rails (~> 0.5.1)
   debug
   importmap-rails
   jbuilder
   pg
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
-  sassc-rails (~> 2.1, >= 2.1.2)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails
+  tailwindcss-rails (~> 3.0)
   tzinfo-data
   web-console
   webdrivers
