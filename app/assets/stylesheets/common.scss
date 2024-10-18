@@ -1,6 +1,5 @@
 @use 'variables' as v;
 
 body {
-	background: v.$background-color;
-	margin: 10px;
+	margin: v.$spacing-unit;
 }

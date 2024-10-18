@@ -1,23 +1,25 @@
 // Colors
-$primary-color: #0047AB;  // Cobalt Blue - Main brand color
+$primary-color: #002a72;  // Dark Navy Blue - Main brand color
 $secondary-color: #87CEFA;  // Light Sky Blue - Secondary color
 $accent-color: #556B2F;  // Olive Green - Accent color
-$background-color: #FFFFF0;  // Ivory - Background color
-$text-color: #2F4F4F;  // Slate Gray - Standard text color
+$background-color: #FFF;  // White - Background color
+$text-color: #000;  // Slate Gray - Standard text color
 $muted-color: #A9A9A9;  // Light Slate Gray - Muted text color
 
 // Typography
 $font-family-base: 'Helvetica Neue', Arial, sans-serif;
 $font-family-seconday: '';
 $font-size-base: 16px;  // Base font size for body
-$font-size-large: 20px;  // Font size for headings or larger text
+$font-size-medium: 20px;  // FOnt size for smaller headings
+$font-size-large: 28px;  // Font size for headings or larger text
+$font-size-xl: 48px;  // Font size for main headings
 $font-size-small: 14px;  // Font size for smaller text
 $font-weight-normal: 400;
 $font-weight-bold: 700;
 $line-height-base: 1.5;
 
 // Spacing (margins, padding)
-$spacing-unit: 16px;  // Base spacing unit
+$spacing-unit: 10px;  // Base spacing unit
 $spacing-small: calc($spacing-unit/2);  // 8px
 $spacing-large: calc($spacing-unit*2);  // 32px
 $container-width: 1200px;  // Max-width for main container

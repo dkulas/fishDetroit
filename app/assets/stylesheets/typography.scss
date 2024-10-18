@@ -10,6 +10,18 @@ address, figure, figcaption {
 	font-family: v.$font-family-base;
 }
 
-p {
+h1 {
+	font-size: v.$font-size-xl;
+}
+
+h2 {
+	font-size: v.$font-size-large;
+}
+
+h3,h4,h5,h6 {
+	font-size: v.$font-size-medium;
+}
+
+h1,h2,h3,h4,h5,h6 {
 	color: v.$primary-color;
 }

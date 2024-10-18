@@ -1,9 +1,7 @@
 <div class="page user-profile--page">
-	<h1><%= @user.name %>'s Profile</h1>
+	<h2><%= @user.name %>'s Profile Page</h2>
 
 	<% if current_user == @user %>
-		<h3>This is my page!</h3>
-
 		<h2>Create a New Post</h2>
 		<%= form_with(model: [@user, @post], local: true) do |form| %>
 		  <div>
@@ -27,13 +25,10 @@
     <% @posts.each do |post| %>
       <li>
         <h3><%= post.title %></h3>
-        <br>
         <small>Posted by <%= post.user.name %> on <%= post.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %> <% if post.updated_at > post.created_at %> (Updated on <%= post.updated_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y at %I:%M %p") %>)<% end %></small>
-        <br>
         <br>
 
         <p><%= post.body %></p>
-        <br>
         <br>
 
         <!-- Edit button for the post -->
