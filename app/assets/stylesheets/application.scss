@@ -1,10 +1,3 @@
 @use 'reset';
-@use 'variables' as v;
-
-body {
-	background: v.$background-color;
-}
-
-p {
-	color: v.$primary-color;
-}
+@use 'typography';
+@use 'common';

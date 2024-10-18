@@ -26,7 +26,7 @@
   <ul>
     <% @posts.each do |post| %>
       <li>
-        <strong><%= post.title %></strong>
+        <h3><%= post.title %></h3>
         <br>
         <small>Posted by <%= post.user.name %> on <%= post.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %> <% if post.updated_at > post.created_at %> (Updated on <%= post.updated_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y at %I:%M %p") %>)<% end %></small>
         <br>

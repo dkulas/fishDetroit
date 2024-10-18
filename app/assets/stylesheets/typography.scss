@@ -1,0 +1,15 @@
+@use 'variables' as v;
+
+h1, h2, h3, h4, h5, h6, 
+p, blockquote, ul, ol, li, 
+b, strong, i, em, small, 
+mark, del, ins, sub, sup, 
+abbr, cite, code, var, kbd, 
+samp, pre, hr, a, dfn, 
+address, figure, figcaption {
+	font-family: v.$font-family-base;
+}
+
+p {
+	color: v.$primary-color;
+}
