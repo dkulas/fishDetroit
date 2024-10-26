@@ -12,7 +12,7 @@ $font-family-seconday: '';
 $font-size-base: 16px;  // Base font size for body
 $font-size-medium: 20px;  // FOnt size for smaller headings
 $font-size-large: 28px;  // Font size for headings or larger text
-$font-size-xl: 48px;  // Font size for main headings
+$font-size-xl: 38px;  // Font size for main headings
 $font-size-small: 14px;  // Font size for smaller text
 $font-weight-normal: 400;
 $font-weight-bold: 700;
@@ -35,6 +35,6 @@ $box-shadow-dark: 0 4px 8px rgba(0, 0, 0, 0.2);
 
 // Breakpoints
 $breakpoint-sm: 576px;
-$breakpoint-md: 768px;
+$breakpoint-md: 768px; 
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;

@@ -14,4 +14,13 @@ body {
     	background: none;
 		}
 	}
+
+	header {
+		display: flex;
+		align-items: center;
+
+		.fish-detroit--logo {
+			max-width: 100px;
+		}
+	}
 }
