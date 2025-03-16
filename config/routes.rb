@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :show] do
     resources :posts, only: [:create] # Nest posts under users to allow user-specific post creation
   end
+  delete '/users/:id', to: 'users#destroy', as: 'delete_user'
 
   get "/signup", to: "users#new", as: :signup   # Route for signup page
 
