@@ -15,3 +15,13 @@
     <%= f.submit "Create Account" %>
   <% end %>
 </div>
+
+<% if @user.errors.any? %>
+  <div class="error-messages">
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
