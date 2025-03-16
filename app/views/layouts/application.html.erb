@@ -16,8 +16,10 @@
     <header>
       <%= image_tag 'logo.svg', alt: 'Fish Detroit Logo', class: 'fish-detroit--logo' %>
       <h1>FishDetroit</h1>
+
+      <%= render "application/header" %>
     </header>
-    <%= render "application/header" %>
+
     <%= render "application/primary_banner" %>
 
     <%= yield %>
