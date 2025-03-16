@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   root to: "application#index"
 
   # User routes
-  resources :users, only: [:new, :create, :show] do
+  resources :users, only: [:new, :create, :show, :edit, :update] do
     resources :posts, only: [:create] # Nest posts under users to allow user-specific post creation
+    member do 
+      patch :update_password
+    end
   end
   delete '/users/:id', to: 'users#destroy', as: 'delete_user'
 

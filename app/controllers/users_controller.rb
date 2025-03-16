@@ -1,12 +1,37 @@
 class UsersController < ApplicationController
-  before_action :authorized, only: [:show]
-  before_action :set_user, only: [:destroy]
+  before_action :authorized, only: [:show, :edit, :update, :update_password]
+  before_action :set_user, only: [:edit, :update, :update_password, :destroy]
   
   def index
   end
 
   def new
     @user = User.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to @user, notice: "Profile updated successfully."
+    else
+      render :edit
+    end
+  end
+
+  def update_password
+    if @user.authenticate(params[:user][:current_password])
+      if @user.update(password_params)
+        redirect_to @user, notice: "Password updated successfully."
+      else
+        flash[:alert] = "Error updating password."
+        render :edit, status: :unprocessable_entity
+      end
+    else
+      flash[:alert] = "Current password is incorrect."
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def create
@@ -40,10 +65,15 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
+    redirect_to root_path, alert: "You must be logged in." unless @user
   end
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def password_params
+    params.require(:user).permit(:password, :password_confirmation)
   end
 end
