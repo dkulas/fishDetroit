@@ -3,21 +3,28 @@
 body {
 	margin: v.$spacing-unit;
 
-	nav {
-		display: flex;
-
-		a, .button_to button {
-			margin: 0 5px 0 0;
-    	padding: 0;
-    	border: none;
-    	background: none;
-		}
-	}
-
 	header {
+		position: sticky;
+    top: 0;
+    left: 0;
+    background: #fff;
+    display: flex;
+
+    nav {
+		  display: flex;
+
+			a, .button_to button {
+				margin: 0 5px 0 0;
+	    	padding: 0;
+	    	border: none;
+	    	background: none;
+			}
+		}
+
 		.fish-detroit--logo {
 			max-width: 100px;
-			float: left;
+			order: 2;
+    	margin: 0 0 0 auto;
 		}
 	}
 
